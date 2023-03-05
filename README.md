@@ -32,6 +32,20 @@ Here are a few things you can try to troubleshoot the issue:
     Try running the container in foreground: Instead of running the container in detached mode (-d flag), try running it in the foreground using the command docker run --name my-app-protect -p 80:80 app-protect. This will show the output of the container in your terminal and help you identify any issues.
 ```
 
+Sample logging server setup: 
+```
+~$ docker run -d -p 514:514 -p 514:514/udp -p 1601:1601 rsyslog/syslog_appliance_alpine
+
+~$ docker ps
+CONTAINER ID        IMAGE                             COMMAND                  CREATED             STATUS              PORTS                                                                NAMES
+b7e6cdd8f84b        rsyslog/syslog_appliance_alpine   "/home/appliance/sta…"   8 minutes ago       Up 8 minutes        0.0.0.0:514->514/tcp, 0.0.0.0:1601->1601/tcp, 0.0.0.0:514->514/udp   heuristic_khorana
+
+~$  docker exec -it b7e6cdd8f84b sh
+
+# cd /logs/hosts/
+
+```
+
 TESTING the app-protect functionality: 
  
 ```
@@ -45,3 +59,5 @@ root@ubuntu:~# curl 'localhost/apple?1=<script>'
 root@ubuntu:~# grep -a 9108677460373260626 /var/log/app_protect/security.log | tr ',' '\n'
 
 ```
+
+
