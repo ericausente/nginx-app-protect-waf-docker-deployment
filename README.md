@@ -16,6 +16,22 @@ docker run --name my-app-protect -p 80:80 -d app-protect
 docker ps
 ```
 
+Troubleshooting Notes if the container is not running.
+
+```
+Here are a few things you can try to troubleshoot the issue:
+
+    Check if the container was created: You can use the command docker ps -a to list all containers (including stopped ones). If the container was created, it should be listed here.
+
+    Check the logs: You can use the command docker logs <container_id> to view the logs of the container. This can help you identify any errors that occurred during the container startup.
+
+    Check the image: Make sure that the app-protect image exists and is valid. You can use the command docker images to list all the images on your system.
+
+    Check if port 80 is available: The -p flag maps port 80 on the host to port 80 in the container. Make sure that port 80 is available on your system and not being used by another process. You can check this by running the command sudo lsof -i :80.
+
+    Try running the container in foreground: Instead of running the container in detached mode (-d flag), try running it in the foreground using the command docker run --name my-app-protect -p 80:80 app-protect. This will show the output of the container in your terminal and help you identify any issues.
+```
+
 TESTING the app-protect functionality: 
  
 ```
