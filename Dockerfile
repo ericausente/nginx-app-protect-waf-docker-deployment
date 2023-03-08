@@ -22,8 +22,10 @@ RUN --mount=type=secret,id=nginx-crt,dst=/etc/ssl/nginx/nginx-repo.crt,mode=0644
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
+RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.bak
 # Copy configuration files:
 COPY nginx.conf custom_log_format.json /etc/nginx/
+COPY app_protect.conf /etc/nginx/conf.d/app_protect.conf
 COPY entrypoint.sh /root/
 
 CMD ["sh", "/root/entrypoint.sh"]
