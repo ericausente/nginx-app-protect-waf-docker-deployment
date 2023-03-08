@@ -8,7 +8,7 @@ https://docs.nginx.com/nginx-app-protect-waf/admin-guide/install/#general-docker
 ```
 
 # Docker Commands 
-### (make sure there are no competing applications using the port 80 as it may complain that exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80: bind: address already in use.
+(make sure there are no competing applications using the port 80 as it may complain that exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80: bind: address already in use.
 ```
 % lsof -i :80
 ```
@@ -21,9 +21,9 @@ docker ps
 ```
 
 # Troubleshooting Notes if the container is not running.
+Here are a few things you can try to troubleshoot the issue:
 
 ```
-Here are a few things you can try to troubleshoot the issue:
 
     Check if the container was created: You can use the command docker ps -a to list all containers (including stopped ones). If the container was created, it should be listed here.
 
