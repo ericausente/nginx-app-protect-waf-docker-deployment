@@ -7,6 +7,10 @@ https://clouddocs.f5.com/training/community/nginx/html/class5/module3/lab1/lab1.
 https://docs.nginx.com/nginx-app-protect-waf/admin-guide/install/#general-docker-deployment-instructions
 ```
 
+```
+git clone https://github.com/ericausente/nginx-app-protect-waf-docker-deployment.git
+cd nginx-app-protect-waf-docker-deployment
+```
 
 # Docker Commands 
 (make sure there are no competing applications using the port 80 as it may complain that exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80: bind: address already in use.
