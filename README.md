@@ -55,7 +55,6 @@ https://docs.nginx.com/nginx-app-protect-waf/admin-guide/install/#general-docker
 Here are a few things you can try to troubleshoot the issue:
 
 ```
-
     Check if the container was created: You can use the command docker ps -a to list all containers (including stopped ones). If the container was created, it should be listed here.
 
     Check the logs: You can use the command docker logs <container_id> to view the logs of the container. This can help you identify any errors that occurred during the container startup.
