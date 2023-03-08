@@ -18,6 +18,8 @@ cd nginx-app-protect-waf-docker-deployment
 % lsof -i :80
 ```
 
+Before proceeding with the below steps, make sure to populate the nginx-repo.crt and nginx-repo.key files with your own SSL certificates. Once done, run the following commands to build the Docker image and run the container:
+
 ```
 DOCKER_BUILDKIT=1 docker build --no-cache --secret id=nginx-crt,src=nginx-repo.crt --secret id=nginx-key,src=nginx-repo.key -t app-protect .
 docker images app-protect
