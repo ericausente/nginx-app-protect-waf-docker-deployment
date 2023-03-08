@@ -57,18 +57,16 @@ b7e6cdd8f84b        rsyslog/syslog_appliance_alpine   "/home/appliance/sta…"  
 
 ```
 
-
 # TESTING the app-protect functionality: 
  
 ```
 % curl http://localhost
 200 OK | Passed | Request was: GET /nap/ 
 
-e.ausente@C02DR4L1MD6M nginx % curl 'http://localhost/?1<script>'     
+% curl 'http://localhost/?1<script>'     
 <html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 9608988821215377121<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>%
 
 ```
-
 
 # Clean up 
 ```
