@@ -1,5 +1,5 @@
 # nginx-app-protect-waf-docker-deployment
-NGINX App Protect WAF Docker Deployment Basic Testing
+## NGINX App Protect WAF Docker Deployment Basic Testing
 
 
 Run the following command to clone the repository. 
@@ -11,7 +11,7 @@ git clone https://github.com/ericausente/nginx-app-protect-waf-docker-deployment
 cd nginx-app-protect-waf-docker-deployment
 ```
 
-# Docker Commands 
+### Docker Commands 
 (make sure there are no competing applications using the port 80 as it may complain that exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80: bind: address already in use.
 ```
 % lsof -i :80
@@ -26,7 +26,7 @@ docker run --name my-app-protect -p 80:80 -d app-protect
 docker ps
 ```
 
-# TESTING the app-protect functionality: 
+### TESTING the app-protect functionality: 
  
 ```
 % curl http://localhost
@@ -37,7 +37,7 @@ docker ps
 
 ```
 
-# Clean up 
+### Clean up 
 ```
 docker stop my-app-protect 
 docker rm my-app-protect 
@@ -45,7 +45,7 @@ docker image rm app-protect
 ```
 
 
-Reference Documentation:
+### Reference Documentation:
 ```
 https://clouddocs.f5.com/training/community/nginx/html/class5/module3/lab1/lab1.html
 https://docs.nginx.com/nginx-app-protect-waf/admin-guide/install/#general-docker-deployment-instructions
