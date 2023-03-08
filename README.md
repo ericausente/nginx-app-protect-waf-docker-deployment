@@ -7,6 +7,7 @@ https://clouddocs.f5.com/training/community/nginx/html/class5/module3/lab1/lab1.
 https://docs.nginx.com/nginx-app-protect-waf/admin-guide/install/#general-docker-deployment-instructions
 ```
 
+
 # Docker Commands 
 (make sure there are no competing applications using the port 80 as it may complain that exposing port TCP 0.0.0.0:80 -> 0.0.0.0:0: listen tcp 0.0.0.0:80: bind: address already in use.
 ```
@@ -60,4 +61,12 @@ b7e6cdd8f84b        rsyslog/syslog_appliance_alpine   "/home/appliance/sta…"  
 e.ausente@C02DR4L1MD6M nginx % curl 'http://localhost/?1<script>'     
 <html><head><title>Request Rejected</title></head><body>The requested URL was rejected. Please consult with your administrator.<br><br>Your support ID is: 9608988821215377121<br><br><a href='javascript:history.back();'>[Go Back]</a></body></html>%
 
+```
+
+
+# Clean up 
+```
+docker stop my-app-protect 
+docker rm my-app-protect 
+docker image rm app-protect
 ```
